@@ -19,7 +19,11 @@
 
 ### 快速开始：
 
-- 首先在[百度网盘](https://pan.baidu.com/s/1wekoQM_TL1HWi3uxmDYkFw)，或者通过`wget https://pjreddie.com/media/files/yolov3.weights`下载yolov3的预训练文件,然后将下载好的模型文件放入**model_data**文件夹下
+- 首先在[百度网盘](https://pan.baidu.com/s/1wekoQM_TL1HWi3uxmDYkFw)，或者通过`wget https://pjreddie.com/media/files/yolov3.weights`下载yolov3的预训练文件,然后将下载好的模型文件放入**model_data**文件夹
+
+- 接着把训练、测试图片以及标签放入**data**文件夹，并且要重新建立好**VOCdevkit**文件夹，具体文件目录如下图所示：
+
+![image/tree.jpg](文件目录树)
 
 - 然后依次运行以下代码：
 
