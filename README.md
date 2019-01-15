@@ -1,6 +1,13 @@
-# DCIC_2019_Glodon
+## DCIC_2019_Glodon
 
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
+---
+
+### 说明：
+
+这个代码相比原版本的keras-yolov3的实现，做了以下处理;
+
+- 增加了NMS的处理，具体代码可以参考`yolo.py`文件
+- 实现了预测图片可视化结果保存，具体代码可以参考`step_5_predict.py`文件
 
 ---
 
@@ -26,3 +33,22 @@
 ### 参数修改：
 
 - anchors 大小在 model_data 下 yolo_anchors.txt
+
+- `yolo.py`文件修改的参数
+
+```
+classes_path = 'model_data/my_classes.txt'
+model_path = 'logs/000/trained_weights_final.h5'
+model_image_size = (640, 640)
+gpu_num = 2
+max_boxes = 300
+score_threshold = 0.1
+iou_threshold = 0.45
+```
+
+
+---
+
+### 参考：
+
+- 其他未尽事宜可参考链接[qqwweee](https://github.com/qqwweee/keras-yolo3)
