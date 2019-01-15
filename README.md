@@ -1,17 +1,28 @@
-# keras-yolo3
+# DCIC_2019_Glodon
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
 ---
 
-# 首先在 https://pan.baidu.com/s/1p04_dYLgUmEUIhzIug_KGA 这里下载yolov3的预训练文件(将下载好的模型文件放入model_data文件夹下)
-# 将下载好的数据放入data文件夹下
+### 快速开始：
 
-step_1_process_data.py 将原本的csv文件转变成voc格式的xml文件
-step_2_mv_data.py 移动文件到指定的目录(方便yolov3模型读写)
-step_3_voc_annotation.py 自动构建训练目录
-step_4_train.py 训练模型(cpu上我训练了一天)
-step_5_yolo_vodeo.py 预测并生成最后提交结果
+- 首先在[百度网盘](https://pan.baidu.com/s/1wekoQM_TL1HWi3uxmDYkFw)，或者通过`wget https://pjreddie.com/media/files/yolov3.weights`下载yolov3的预训练文件,然后将下载好的模型文件放入**model_data**文件夹下
 
-分数比较低只有0.2左右，听群里说调anchors有效果
-anchors大小在model_data下yolo_anchors.txt
+- 然后依次运行以下代码：
+
+1. step_1_process_data.py　　　　将原本的csv文件转变成voc格式的xml文件
+
+2. step_2_mv_data.py　　　　     移动文件到指定的目录(方便yolov3模型读写)
+
+3. step_3_voc_annotation.py　　  自动构建训练目录
+
+4. step_4_train.py　　　　        训练模型
+
+5. step_5_predict.py　　　      　预测并生成最后提交结果
+
+
+---
+
+### 参数修改：
+
+- anchors 大小在 model_data 下 yolo_anchors.txt
