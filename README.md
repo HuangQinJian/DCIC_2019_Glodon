@@ -23,7 +23,7 @@
 
 - 接着把训练、测试图片以及标签放入**data**文件夹，并且要重新建立好**VOCdevkit**文件夹，具体文件目录如下图所示：
 
-![image/tree.jpg](文件目录树)
+![https://github.com/HuangQinJian/DCIC_2019_Glodon/raw/master/image/tree.jpg](文件目录树)
 
 - 然后依次运行以下代码：
 
