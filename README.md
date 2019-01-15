@@ -2,7 +2,13 @@
 
 ---
 
-### 说明：
+### 比赛链接：
+
+- [智能盘点—钢筋数量AI识别](https://www.datafountain.cn/competitions/332/details)
+
+---
+
+### 代码说明：
 
 这个代码相比原版本的keras-yolov3的实现，做了以下处理：
 
@@ -59,6 +65,6 @@ classes_path = 'model_data/my_classes.txt'
 
 ---
 
-### 参考：
+### 资料参考：
 
 - 其他未尽事宜可参考链接[ qqwweee ](https://github.com/qqwweee/keras-yolo3)
