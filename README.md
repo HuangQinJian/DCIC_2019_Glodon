@@ -43,6 +43,8 @@
 
 - anchors 大小在 model_data 下 yolo_anchors.txt
 
+值得注意的是 anchors 可以根据[ lars76/kmeans-anchor-boxes ](https://github.com/lars76/kmeans-anchor-boxes)以及[ YOLO-v3模型参数anchor设置 ]( https://blog.csdn.net/m_buddy/article/details/82926024 )修改成适合自己数据集大小。
+
 - `yolo.py`文件修改的参数
 
 ```
