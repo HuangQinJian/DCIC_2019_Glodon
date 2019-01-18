@@ -15,7 +15,7 @@
 - 增加了 NMS 的处理，具体代码可以参考`yolo.py`文件
 - 实现了预测图片可视化结果保存，具体代码可以参考`step_5_predict.py`文件
 - `visual/visual.py`是可视化训练集Boxes的代码
-
+- `data_augment.py`实现了数据增广
 ---
 
 ### 快速开始：
