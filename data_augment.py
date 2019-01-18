@@ -1,3 +1,10 @@
+'''
+@Description: 
+@Author: HuangQinJian
+@Date: 2019-01-10 13:25:54
+@LastEditTime: 2019-01-17 11:22:26
+@LastEditors: HuangQinJian
+'''
 import os
 import cv2
 import time
@@ -99,12 +106,13 @@ def apply_augment(augment_type, img_path, train_label_path):
         boxes_augment, img_augment = augment(
             img_raw, boxes_list, augment_type)
 
-        cv2.imwrite('data/augument/{}.jpg'.format(
-            img_name.split('.')[0]+'_augument'), img_augment)
+        img_aug_name = img_name.split('.')[0]+'_augument_'+augment_type+'.jpg'
+        cv2.imwrite('data/augument/{}'.format(
+            img_aug_name), img_augment)
         # draw_rectangle(boxes_augment, img_augment)
         for j in range(len(boxes_augment)):
             img_name_augment_list.append(
-                img_name.split('.')[0]+'_augument'+'.jpg')
+                img_aug_name)
             box = str(boxes_augment[j][0])+' '+str(boxes_augment[j][1]) + \
                 ' '+str(boxes_augment[j][2])+' '+str(boxes_augment[j][3])
             box_augment_list.append(box)
@@ -134,10 +142,26 @@ def merge_augment_raw(train_label_path, train_augument, img_path, augment_img_pa
 
 if __name__ == '__main__':
     img_path = 'data/train_dataset/'
+    # img_path = 'data/a/'
     train_label_path = 'data/train_labels.csv'
     augment_type = 'vertical_flips'
     train_augument = apply_augment(
         augment_type, img_path, train_label_path)
-    merge_augment_raw(train_label_path, train_augument,
-                      img_path, augment_img_path)
+
+    augment_type_2 = 'horizontal_flips'
+    train_augument_2 = apply_augment(
+        augment_type_2, img_path, train_label_path)
+
+    train = pd.read_csv(train_label_path)
+    train = train[['ID', 'Detection']]
+    train_merge = pd.concat([train, train_augument])
+    train_merge = pd.concat([train_merge, train_augument_2])
+    train_merge.to_csv('data/train_merge_labels.csv', index=None)
+    augment_img_list = os.listdir(augment_img_path)
+    for i in augment_img_list:
+        shutil.copy(augment_img_path + i,
+                    img_path + i)
+
+    # merge_augment_raw(train_label_path, train_augument,
+    #                   img_path, augment_img_path)
     # train_augument.to_csv('data/train_augument_labels.csv', index=None)
